@@ -1,0 +1,19 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Ambiente / segredos
+.env
+.env.*
+*.pem
+
+# Logs e cache
+*.log
+.cache/

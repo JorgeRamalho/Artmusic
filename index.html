@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ArtMusic — Loja premium de instrumentos musicais. Cordas, sopro, percussão, teclados, CDJs e equipamentos DJ para todas as gerações.">
+  <title>ArtMusic | Instrumentos Musicais Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="header" id="topo">
+    <nav class="nav container">
+      <a href="#topo" class="logo">
+        <span class="logo-icon">♪</span>
+        <span class="logo-text">Art<span>Music</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#geracoes">Gerações</a></li>
+        <li><a href="#embaixadores">Embaixadores</a></li>
+        <li><a href="#surpresa">Surpresa</a></li>
+        <li><a href="#cadastro" class="btn-nav">Cadastre-se</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-orbs">
+          <span class="orb orb-1"></span>
+          <span class="orb orb-2"></span>
+          <span class="orb orb-3"></span>
+        </div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-tag">Desde 1960 · Para todas as gerações</p>
+          <h1 class="hero-title">
+            O som que<br>
+            <em>define você</em>
+          </h1>
+          <p class="hero-subtitle">
+            Cordas, sopro, percussão, teclados, CDJs e equipamentos profissionais.
+            Curadoria premium para músicos de todas as eras — do vinil ao streaming.
+          </p>
+          <div class="hero-actions">
+            <a href="#categorias" class="btn btn-primary">Explorar instrumentos</a>
+            <a href="#surpresa" class="btn btn-ghost">Instrumento surpresa</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>2.400+</strong>
+              <span>Instrumentos</span>
+            </div>
+            <div class="stat">
+              <strong>65</strong>
+              <span>Marcas premium</span>
+            </div>
+            <div class="stat">
+              <strong>5</strong>
+              <span>Décadas de história</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-stack">
+            <img src="assets/images/hero-studio.jpg" alt="Controlador DJ com pads iluminados" class="hero-img hero-img-1" width="600" height="400" loading="eager">
+            <img src="assets/images/hero-dj.jpg" alt="Show ao vivo com público e luzes" class="hero-img hero-img-2" width="500" height="350" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARCAS -->
+    <section class="brands" aria-label="Marcas parceiras">
+      <div class="container brands-track">
+        <span>Fender</span><span>Gibson</span><span>Yamaha</span><span>Roland</span>
+        <span>Pioneer DJ</span><span>Pearl</span><span>Steinway</span><span>Moog</span>
+        <span>Technics</span><span>Marshall</span><span>Shure</span><span>Zildjian</span>
+      </div>
+    </section>
+
+    <!-- CATEGORIAS -->
+    <section class="section categorias" id="categorias">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">Catálogo completo</span>
+          <h2>Todos os tipos de <span class="gradient-text">instrumentos</span></h2>
+          <p>Do clássico ao cutting-edge. Encontre o equipamento perfeito para sua arte.</p>
+        </header>
+        <div class="category-grid">
+          <article class="category-card category-cordas">
+            <div class="category-img">
+              <img src="assets/images/cat-cordas.jpg" alt="Guitarrista tocando guitarra elétrica">
+            </div>
+            <div class="category-body">
+              <span class="category-icon">🎸</span>
+              <h3>Cordas</h3>
+              <p>Guitarras, baixos, violões, violinos, violas, cellos e harpas.</p>
+              <ul class="category-tags">
+                <li>Elétrica</li><li>Acústica</li><li>Clássica</li><li>12 cordas</li>
+              </ul>
+              <a href="#categorias" class="category-link">Ver coleção →</a>
+            </div>
+          </article>
+
+          <article class="category-card category-sopro">
+            <div class="category-img">
+              <img src="assets/images/cat-sopro.jpg" alt="Flauta transversal">
+            </div>
+            <div class="category-body">
+              <span class="category-icon">🎷</span>
+              <h3>Sopro</h3>
+              <p>Saxofones, trompetes, trombones, flautas, clarinetes e oboés.</p>
+              <ul class="category-tags">
+                <li>Jazz</li><li>Clássico</li><li>Marching</li><li>Studio</li>
+              </ul>
+              <a href="#categorias" class="category-link">Ver coleção →</a>
+            </div>
+          </article>
+
+          <article class="category-card category-percussao">
+            <div class="category-img">
+              <img src="assets/images/cat-percussao.jpg" alt="Bateria completa">
+            </div>
+            <div class="category-body">
+              <span class="category-icon">🥁</span>
+              <h3>Percussão</h3>
+              <p>Baterias acústicas e eletrônicas, congas, timbales, cajóns e pratos.</p>
+              <ul class="category-tags">
+                <li>Rock</li><li>Latin</li><li>Eletrônica</li><li>Orquestral</li>
+              </ul>
+              <a href="#categorias" class="category-link">Ver coleção →</a>
+            </div>
+          </article>
+
+          <article class="category-card category-teclados">
+            <div class="category-img">
+              <img src="assets/images/cat-teclados.jpg" alt="Console de órgão com teclados manuais e registro de stops">
+            </div>
+            <div class="category-body">
+              <span class="category-icon">🎹</span>
+              <h3>Teclados</h3>
+              <p>Pianos acústicos e digitais, sintetizadores, workstations e controladores MIDI.</p>
+              <ul class="category-tags">
+                <li>Piano</li><li>Synth</li><li>MIDI</li><li>Stage</li>
+              </ul>
+              <a href="#categorias" class="category-link">Ver coleção →</a>
+            </div>
+          </article>
+
+          <article class="category-card category-dj">
+            <div class="category-img">
+              <img src="assets/images/hero-dj.jpg" alt="CDJs Pioneer">
+            </div>
+            <div class="category-body">
+              <span class="category-icon">🎧</span>
+              <h3>DJ & Eletrônicos</h3>
+              <p>CDJs, mixers, turntables Technics, controllers, interfaces e monitores.</p>
+              <ul class="category-tags">
+                <li>CDJ</li><li>Mixer</li><li>Controller</li><li>Monitor</li>
+              </ul>
+              <a href="#categorias" class="category-link">Ver coleção →</a>
+            </div>
+          </article>
+
+          <article class="category-card category-audio">
+            <div class="category-img">
+              <img src="assets/images/cat-audio.jpg" alt="Sala de controle de estúdio com mesa de mixagem e equipamentos profissionais">
+            </div>
+            <div class="category-body">
+              <span class="category-icon">🎙️</span>
+              <h3>Áudio & Estúdio</h3>
+              <p>Microfones, pré-amps, compressores, fones, cabos e racks profissionais.</p>
+              <ul class="category-tags">
+                <li>Condenser</li><li>Dynamic</li><li>Interface</li><li>Outboard</li>
+              </ul>
+              <a href="#categorias" class="category-link">Ver coleção →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GERAÇÕES -->
+    <section class="section geracoes" id="geracoes">
+      <div class="container">
+        <header class="section-header section-header-light">
+          <span class="section-label">Linha do tempo musical</span>
+          <h2>Uma loja para <span class="gradient-text">cada geração</span></h2>
+          <p>Do rock psicodélico ao hyperpop. Cada década tem sua voz — nós temos os instrumentos.</p>
+        </header>
+        <div class="eras-timeline">
+          <article class="era-card era-60">
+            <div class="era-year">1960</div>
+            <div class="era-content">
+              <h3>Anos 60 · Revolução</h3>
+              <p>Rickenbacker, Hofner, Hammond B3. O som que mudou o mundo.</p>
+              <div class="era-img">
+                <img src="assets/images/era-60.jpg" alt="Estética anos 60">
+              </div>
+              <span class="era-genre">Rock · Psicodelia · Motown · Bossa Nova</span>
+            </div>
+          </article>
+
+          <article class="era-card era-70">
+            <div class="era-year">1970</div>
+            <div class="era-content">
+              <h3>Anos 70 · Disco & Prog</h3>
+              <p>Moog synthesizers, Rhodes, baterias Ludwig. Funk, disco e rock progressivo.</p>
+              <div class="era-img">
+                <img src="assets/images/era-70.jpg" alt="Estética anos 70">
+              </div>
+              <span class="era-genre">Disco · Prog Rock · Funk · MPB</span>
+            </div>
+          </article>
+
+          <article class="era-card era-80">
+            <div class="era-year">1980</div>
+            <div class="era-content">
+              <h3>Anos 80 · Synthwave</h3>
+              <p>Roland Juno, DX7, Simmons drums. New wave, pop e hair metal.</p>
+              <div class="era-img">
+                <img src="assets/images/era-80.jpg" alt="Estética anos 80">
+              </div>
+              <span class="era-genre">New Wave · Synth Pop · Hair Metal · Hip-Hop</span>
+            </div>
+          </article>
+
+          <article class="era-card era-90">
+            <div class="era-year">1990</div>
+            <div class="era-content">
+              <h3>Anos 90 · Grunge & Rave</h3>
+              <p>Fender Jazzmaster, Technics 1200, Akai MPC. Alternativo e eletrônico.</p>
+              <div class="era-img">
+                <img src="assets/images/era-90.jpg" alt="Estética anos 90">
+              </div>
+              <span class="era-genre">Grunge · Rave · Hip-Hop · Pop</span>
+            </div>
+          </article>
+
+          <article class="era-card era-2000">
+            <div class="era-year">2000</div>
+            <div class="era-content">
+              <h3>Anos 2000 · Digital Age</h3>
+              <p>CDJs Pioneer, Ableton Push, Elektron. EDM, indie e produção digital.</p>
+              <div class="era-img">
+                <img src="assets/images/era-2000.jpg" alt="Estética anos 2000">
+              </div>
+              <span class="era-genre">EDM · Indie · R&B · Trap</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMBAIXADORES -->
+    <section class="section embaixadores" id="embaixadores">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">Nossa comunidade</span>
+          <h2>Músicos que <span class="gradient-text">inspiram</span></h2>
+          <p>Artistas de todas as idades e estilos escolhem ArtMusic. Junte-se à família.</p>
+        </header>
+        <div class="ambassadors-grid">
+          <article class="ambassador-card">
+            <div class="ambassador-img">
+              <img src="assets/images/amb-1.jpg" alt="Músico jovem com guitarra">
+              <div class="ambassador-overlay"></div>
+            </div>
+            <div class="ambassador-info">
+              <span class="ambassador-era">Rock · Gen Z</span>
+              <h3>Luna Ferreira</h3>
+              <p>"Minha Strat da ArtMusic é extensão da minha alma."</p>
+              <span class="ambassador-instrument">🎸 Guitarra Elétrica</span>
+            </div>
+          </article>
+
+          <article class="ambassador-card">
+            <div class="ambassador-img">
+              <img src="assets/images/amb-2.jpg" alt="DJ em performance">
+              <div class="ambassador-overlay"></div>
+            </div>
+            <div class="ambassador-info">
+              <span class="ambassador-era">EDM · Millennials</span>
+              <h3>Marcos "Pulse" Alves</h3>
+              <p>"CDJs impecáveis. Cada set é uma experiência única."</p>
+              <span class="ambassador-instrument">🎧 Pioneer CDJ-3000</span>
+            </div>
+          </article>
+
+          <article class="ambassador-card">
+            <div class="ambassador-img">
+              <img src="assets/images/amb-3.jpg" alt="Saxofonista em palco">
+              <div class="ambassador-overlay"></div>
+            </div>
+            <div class="ambassador-info">
+              <span class="ambassador-era">Jazz · Boomers</span>
+              <h3>Helena Costa</h3>
+              <p>"40 anos de sax. A ArtMusic entende o que é qualidade."</p>
+              <span class="ambassador-instrument">🎷 Sax Alto Custom</span>
+            </div>
+          </article>
+
+          <article class="ambassador-card">
+            <div class="ambassador-img">
+              <img src="assets/images/amb-4.jpg" alt="Produtora no estúdio">
+              <div class="ambassador-overlay"></div>
+            </div>
+            <div class="ambassador-info">
+              <span class="ambassador-era">Pop · Gen X</span>
+              <h3>Camila Rocha</h3>
+              <p>"Do piano ao synth — tudo num só lugar. Perfeito."</p>
+              <span class="ambassador-instrument">🎹 Roland Fantom</span>
+            </div>
+          </article>
+
+          <article class="ambassador-card">
+            <div class="ambassador-img">
+              <img src="assets/images/amb-5.jpg" alt="Baterista em ação">
+              <div class="ambassador-overlay"></div>
+            </div>
+            <div class="ambassador-info">
+              <span class="ambassador-era">Rock · Gen Y</span>
+              <h3>Rafael Mendes</h3>
+              <p>"Pearl Masters — o punch que meus shows precisavam."</p>
+              <span class="ambassador-instrument">🥁 Bateria Acústica</span>
+            </div>
+          </article>
+
+          <article class="ambassador-card">
+            <div class="ambassador-img">
+              <img src="assets/images/amb-6.jpg" alt="Cantora com violão">
+              <div class="ambassador-overlay"></div>
+            </div>
+            <div class="ambassador-info">
+              <span class="ambassador-era">MPB · Todas as idades</span>
+              <h3>Isabela Santos</h3>
+              <p>"Violão Taylor com som de estúdio. Minha voz ganhou corpo."</p>
+              <span class="ambassador-instrument">🎸 Violão Acústico</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTRUMENTO SURPRESA -->
+    <section class="section surpresa" id="surpresa">
+      <div class="surpresa-bg"></div>
+      <div class="container surpresa-inner">
+        <div class="surpresa-content">
+          <span class="section-label">Clube exclusivo</span>
+          <h2>Instrumento <span class="gradient-text">Surpresa</span></h2>
+          <p class="surpresa-desc">
+            Assine e receba mensalmente um instrumento ou acessório curado por nossos especialistas.
+            Descubra novos sons, marcas e possibilidades — do vintage ao lançamento.
+          </p>
+          <ul class="surpresa-benefits">
+            <li>✦ Instrumento surpresa todo mês</li>
+            <li>✦ Valor mínimo garantido de R$ 800</li>
+            <li>✦ Acesso antecipado a lançamentos</li>
+            <li>✦ Cancelamento a qualquer momento</li>
+          </ul>
+          <div class="surpresa-price">
+            <span class="price-from">A partir de</span>
+            <strong>R$ 299<span>/mês</span></strong>
+          </div>
+        </div>
+        <form class="form surpresa-form" id="form-surpresa" novalidate>
+          <h3>Inscreva-se no clube</h3>
+          <div class="form-group">
+            <label for="surpresa-nome">Nome completo</label>
+            <input type="text" id="surpresa-nome" name="nome" required placeholder="Seu nome" autocomplete="name">
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="surpresa-email">E-mail</label>
+            <input type="email" id="surpresa-email" name="email" required placeholder="seu@email.com" autocomplete="email">
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="surpresa-estilo">Estilo musical preferido</label>
+            <select id="surpresa-estilo" name="estilo" required>
+              <option value="">Selecione...</option>
+              <option value="rock">Rock / Metal</option>
+              <option value="jazz">Jazz / Blues</option>
+              <option value="classico">Clássico / Orquestral</option>
+              <option value="eletronica">Eletrônica / DJ</option>
+              <option value="pop">Pop / MPB</option>
+              <option value="surpresa">Deixe a surpresa total!</option>
+            </select>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="surpresa-plano">Plano</label>
+            <select id="surpresa-plano" name="plano" required>
+              <option value="">Selecione...</option>
+              <option value="essencial">Essencial — R$ 299/mês</option>
+              <option value="premium">Premium — R$ 599/mês</option>
+              <option value="vip">VIP — R$ 999/mês</option>
+            </select>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="surpresa-termos" name="termos" required>
+            <label for="surpresa-termos">Aceito os termos e condições do clube surpresa</label>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Quero minha surpresa 🎁</button>
+          <p class="form-success" id="surpresa-success" hidden>🎉 Inscrição realizada! Em breve você receberá um e-mail de confirmação.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CADASTRO -->
+    <section class="section cadastro" id="cadastro">
+      <div class="container cadastro-grid">
+        <div class="cadastro-info">
+          <span class="section-label">Faça parte</span>
+          <h2>Cadastre-se na <span class="gradient-text">ArtMusic</span></h2>
+          <p>
+            Crie sua conta e desbloqueie benefícios exclusivos: descontos de membro,
+            histórico de pedidos, wishlist personalizada e convites para eventos e workshops.
+          </p>
+          <div class="cadastro-perks">
+            <div class="perk">
+              <span class="perk-icon">10%</span>
+              <div>
+                <strong>Desconto de boas-vindas</strong>
+                <p>Na primeira compra acima de R$ 500</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🎵</span>
+              <div>
+                <strong>Newsletter semanal</strong>
+                <p>Lançamentos, dicas e ofertas exclusivas</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">⭐</span>
+              <div>
+                <strong>Programa de fidelidade</strong>
+                <p>Acumule pontos a cada compra</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="form cadastro-form" id="form-cadastro" novalidate>
+          <h3>Criar conta</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cad-nome">Nome</label>
+              <input type="text" id="cad-nome" name="nome" required placeholder="João" autocomplete="given-name">
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="cad-sobrenome">Sobrenome</label>
+              <input type="text" id="cad-sobrenome" name="sobrenome" required placeholder="Silva" autocomplete="family-name">
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" name="email" required placeholder="joao@email.com" autocomplete="email">
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="cad-telefone">Telefone</label>
+            <input type="tel" id="cad-telefone" name="telefone" required placeholder="(11) 99999-9999" autocomplete="tel">
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="cad-nascimento">Data de nascimento</label>
+            <input type="date" id="cad-nascimento" name="nascimento" required>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="cad-instrumento">Instrumento principal</label>
+            <select id="cad-instrumento" name="instrumento" required>
+              <option value="">Selecione...</option>
+              <option value="cordas">Cordas</option>
+              <option value="sopro">Sopro</option>
+              <option value="percussao">Percussão</option>
+              <option value="teclados">Teclados</option>
+              <option value="dj">DJ / Eletrônicos</option>
+              <option value="vocal">Vocal</option>
+              <option value="outro">Outro</option>
+            </select>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cad-senha">Senha</label>
+              <input type="password" id="cad-senha" name="senha" required placeholder="Mín. 8 caracteres" autocomplete="new-password" minlength="8">
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="cad-confirma">Confirmar senha</label>
+              <input type="password" id="cad-confirma" name="confirma" required placeholder="Repita a senha" autocomplete="new-password">
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="cad-newsletter" name="newsletter">
+            <label for="cad-newsletter">Quero receber novidades e ofertas por e-mail</label>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="cad-termos" name="termos" required>
+            <label for="cad-termos">Li e aceito os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></label>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Criar minha conta</button>
+          <p class="form-success" id="cadastro-success" hidden>✅ Conta criada com sucesso! Bem-vindo à ArtMusic.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#topo" class="logo">
+          <span class="logo-icon">♪</span>
+          <span class="logo-text">Art<span>Music</span></span>
+        </a>
+        <p>A casa dos instrumentos musicais para todas as gerações. Qualidade, paixão e som desde 1960.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="TikTok">TK</a>
+          <a href="#" aria-label="Spotify">SP</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Loja</h4>
+        <ul>
+          <li><a href="#categorias">Categorias</a></li>
+          <li><a href="#surpresa">Clube Surpresa</a></li>
+          <li><a href="#">Outlet</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Lojas físicas</a></li>
+          <li><a href="#">Trabalhe conosco</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Atendimento</h4>
+        <ul>
+          <li><a href="#">Central de ajuda</a></li>
+          <li><a href="#">Trocas e devoluções</a></li>
+          <li><a href="#">Garantia</a></li>
+          <li><a href="mailto:contato@artmusic.com.br">contato@artmusic.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 ArtMusic. Todos os direitos reservados.</p>
+      <p class="footer-note">Imagens ilustrativas via Pexels. Projeto demonstrativo.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
