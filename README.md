@@ -1,8 +1,8 @@
-📌 ## Artmusic - Musica e Arte  
+📌 ## Artmusic 🎸 - Musica e Arte  
 
 🌐 ## Website Link do projeto online: https://artmusic.vercel.app/
 
-📂 ## Repositório: https://github.com//JorgeRamalho/Artmusic
+📂 ## Repositório: https://github.com//JorgeRamalho/Artmusic.git
 
 💻 ## Tecnologias
 
