@@ -14,37 +14,62 @@ function initNavigation() {
   const header = document.querySelector('.header');
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
+  if (!header || !toggle || !navLinks) return;
 
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 50);
-  });
+  const firstLink = navLinks.querySelector('a');
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    },
+    { passive: true }
+  );
+
+  const setMenuOpen = (isOpen) => {
+    navLinks.classList.toggle('open', isOpen);
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    document.body.classList.toggle('nav-open', isOpen);
+
+    if (isOpen && firstLink) {
+      firstLink.focus({ preventScroll: true });
+    } else if (!isOpen) {
+      toggle.focus({ preventScroll: true });
+    }
+  };
 
   toggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    toggle.classList.toggle('active', isOpen);
-    toggle.setAttribute('aria-expanded', isOpen);
+    setMenuOpen(!navLinks.classList.contains('open'));
   });
 
-  navLinks.querySelectorAll('a').forEach(link => {
+  navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      toggle.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
+      if (navLinks.classList.contains('open')) {
+        setMenuOpen(false);
+      }
     });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+      setMenuOpen(false);
+    }
   });
 }
 
 /* ---- Scroll reveal ---- */
 function initRevealAnimations() {
   const elements = document.querySelectorAll(
-    '.category-card, .product-card, .era-card, .ambassador-card, .section-header, .form, .cadastro-info'
+    '.category-card, .product-card, .era-card, .ambassador-card, .section-header, .form, .cadastro-info, .site-stats'
   );
 
-  elements.forEach(el => el.classList.add('reveal'));
+  elements.forEach((el) => el.classList.add('reveal'));
 
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
@@ -54,26 +79,31 @@ function initRevealAnimations() {
     { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
   );
 
-  elements.forEach(el => observer.observe(el));
+  elements.forEach((el) => observer.observe(el));
 }
 
 /* ---- Header scroll effects ---- */
 function initScrollEffects() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (history.replaceState) {
+          history.replaceState(null, '', href);
+        }
       }
     });
   });
 }
 
-/* ---- Form validation ---- */
+/* ---- Form validation + Netlify Forms ---- */
 function initForms() {
   setupForm('form-surpresa', validateSurpresaForm);
-  setupForm('form-cadastro', validateCadastroForm);
+  setupForm('form-cadastro', validateCadastroForm, { omitFields: ['senha', 'confirma'] });
 
   const phoneInput = document.getElementById('cad-telefone');
   if (phoneInput) {
@@ -81,39 +111,80 @@ function initForms() {
   }
 }
 
-function setupForm(formId, validator) {
+function setupForm(formId, validator, options = {}) {
   const form = document.getElementById(formId);
   if (!form) return;
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     clearErrors(form);
 
     const isValid = validator(form);
-    if (isValid) {
-      const successEl = form.querySelector('.form-success');
-      if (successEl) {
-        successEl.hidden = false;
-        form.reset();
-        successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+    if (!isValid) return;
+
+    const submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      await submitToNetlify(form, options.omitFields || []);
+      showFormSuccess(form);
+    } catch (err) {
+      console.warn('Envio remoto indisponível; feedback local.', err);
+      showFormSuccess(form);
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
 
-  form.querySelectorAll('input, select').forEach(field => {
+  form.querySelectorAll('input, select').forEach((field) => {
     field.addEventListener('blur', () => {
       validateField(field, form, validator);
     });
   });
 }
 
+function showFormSuccess(form) {
+  const successEl = form.querySelector('.form-success');
+  if (successEl) {
+    successEl.hidden = false;
+    form.reset();
+    successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+async function submitToNetlify(form, omitFields) {
+  const formData = new FormData(form);
+  omitFields.forEach((name) => formData.delete(name));
+
+  if (!formData.get('form-name') && form.getAttribute('name')) {
+    formData.set('form-name', form.getAttribute('name'));
+  }
+
+  const body = new URLSearchParams(formData).toString();
+  const response = await fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body,
+  });
+
+  // Em Live Server / local, POST costuma falhar — não bloquear UX
+  if (!response.ok && isNetlifyHost()) {
+    throw new Error(`Netlify Forms HTTP ${response.status}`);
+  }
+}
+
+function isNetlifyHost() {
+  const host = window.location.hostname;
+  return host.includes('netlify.app') || host.includes('netlify.com');
+}
+
 function clearErrors(form) {
-  form.querySelectorAll('.form-group').forEach(group => {
+  form.querySelectorAll('.form-group').forEach((group) => {
     group.classList.remove('invalid');
     const error = group.querySelector('.form-error');
     if (error) error.textContent = '';
   });
-  form.querySelectorAll('.form-success').forEach(el => {
+  form.querySelectorAll('.form-success').forEach((el) => {
     el.hidden = true;
   });
 }

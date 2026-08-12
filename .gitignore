@@ -17,3 +17,8 @@ desktop.ini
 # Logs e cache
 *.log
 .cache/
+
+# Deploy: manter _archive versionado no Git (decisão Sprint 0-A),
+# mas excluir do publish em hosts que respeitem esta lista
+# (GitHub Pages / scripts custom). Netlify: ver netlify.toml ignore.
+# assets/images/_archive/  ← NÃO ignorar no Git; só no deploy

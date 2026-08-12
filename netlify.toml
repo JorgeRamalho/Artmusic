@@ -1,0 +1,32 @@
+# ArtMusic — site estático
+# Deploy: GitHub Pages (workflow) é o alvo principal de produção.
+# Netlify permanece disponível para Forms + preview.
+
+[build]
+  publish = "."
+  command = "true"
+
+# Não publicar rascunhos (Netlify ignora paths via plugin/UI;
+# use também .deployignore em scripts de CI manuais).
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[redirects]]
+  from = "/termos"
+  to = "/pages/termos.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacidade"
+  to = "/pages/privacidade.html"
+  status = 200

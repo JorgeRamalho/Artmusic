@@ -4,14 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ArtMusic — Loja premium de instrumentos musicais. Cordas, sopro, percussão, teclados, CDJs e equipamentos DJ para todas as gerações.">
+  <meta name="theme-color" content="#060a10">
+  <meta name="robots" content="index, follow">
   <title>ArtMusic | Instrumentos Musicais Premium</title>
+  <link rel="canonical" href="https://jorgeramalho.github.io/Artmusic/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="ArtMusic">
+  <meta property="og:title" content="ArtMusic | Instrumentos Musicais Premium">
+  <meta property="og:description" content="ArtMusic — Loja premium de instrumentos musicais. Cordas, sopro, percussão, teclados, CDJs e equipamentos DJ para todas as gerações.">
+  <meta property="og:url" content="https://jorgeramalho.github.io/Artmusic/">
+  <meta property="og:image" content="https://jorgeramalho.github.io/Artmusic/assets/images/hero/hero-studio.jpg">
+  <meta property="og:image:alt" content="Controlador DJ e equipamentos ArtMusic">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ArtMusic | Instrumentos Musicais Premium">
+  <meta name="twitter:description" content="Loja premium de instrumentos musicais para todas as gerações — do vinil ao streaming.">
+  <meta name="twitter:image" content="https://jorgeramalho.github.io/Artmusic/assets/images/hero/hero-studio.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicStore",
+    "name": "ArtMusic",
+    "description": "Loja premium de instrumentos musicais para todas as gerações.",
+    "url": "https://jorgeramalho.github.io/Artmusic/",
+    "email": "contato@artmusic.com.br",
+    "image": "https://jorgeramalho.github.io/Artmusic/assets/images/hero/hero-studio.jpg",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="header" id="topo">
@@ -33,7 +71,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="conteudo">
     <!-- HERO -->
     <section class="hero">
       <div class="hero-bg">
@@ -59,25 +97,17 @@
             <a href="#categorias" class="btn btn-primary">Explorar instrumentos</a>
             <a href="#surpresa" class="btn btn-ghost">Instrumento surpresa</a>
           </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>2.400+</strong>
-              <span>Instrumentos</span>
-            </div>
-            <div class="stat">
-              <strong>65</strong>
-              <span>Marcas premium</span>
-            </div>
-            <div class="stat">
-              <strong>5</strong>
-              <span>Décadas de história</span>
-            </div>
-          </div>
         </div>
         <div class="hero-visual">
           <div class="hero-image-stack">
-            <img src="assets/images/hero-studio.jpg" alt="Controlador DJ com pads iluminados" class="hero-img hero-img-1" width="600" height="400" loading="eager">
-            <img src="assets/images/hero-dj.jpg" alt="Show ao vivo com público e luzes" class="hero-img hero-img-2" width="500" height="350" loading="eager">
+            <picture class="hero-img hero-img-1">
+              <source srcset="assets/images/hero/hero-studio.webp" type="image/webp">
+              <img src="assets/images/hero/hero-studio.jpg" alt="Controlador DJ com pads iluminados" width="600" height="400" loading="eager" fetchpriority="high">
+            </picture>
+            <picture class="hero-img hero-img-2">
+              <source srcset="assets/images/hero/hero-dj.webp" type="image/webp">
+              <img src="assets/images/hero/hero-dj.jpg" alt="Show ao vivo com público e luzes" width="500" height="350" loading="eager">
+            </picture>
           </div>
         </div>
       </div>
@@ -92,6 +122,24 @@
       </div>
     </section>
 
+    <!-- NÚMEROS (fora do primeiro viewport) -->
+    <section class="site-stats" aria-label="Números ArtMusic">
+      <div class="container site-stats-inner">
+        <div class="stat">
+          <strong>2.400+</strong>
+          <span>Instrumentos</span>
+        </div>
+        <div class="stat">
+          <strong>65</strong>
+          <span>Marcas premium</span>
+        </div>
+        <div class="stat">
+          <strong>5</strong>
+          <span>Décadas de história</span>
+        </div>
+      </div>
+    </section>
+
     <!-- CATEGORIAS -->
     <section class="section categorias" id="categorias">
       <div class="container">
@@ -101,9 +149,12 @@
           <p>Do clássico ao cutting-edge. Encontre o equipamento perfeito para sua arte.</p>
         </header>
         <div class="category-grid">
-          <article class="category-card category-cordas">
+          <article class="category-card category-cordas" id="colecao-cordas">
             <div class="category-img">
-              <img src="assets/images/cat-cordas.jpg" alt="Guitarrista tocando guitarra elétrica">
+              <picture>
+                <source srcset="assets/images/categories/cat-cordas.webp" type="image/webp">
+                <img src="assets/images/categories/cat-cordas.jpg" alt="Guitarrista tocando guitarra elétrica" width="800" height="533" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="category-body">
               <span class="category-icon">🎸</span>
@@ -112,13 +163,16 @@
               <ul class="category-tags">
                 <li>Elétrica</li><li>Acústica</li><li>Clássica</li><li>12 cordas</li>
               </ul>
-              <a href="#categorias" class="category-link">Ver coleção →</a>
+              <a href="#colecao-cordas" class="category-link">Ver coleção →</a>
             </div>
           </article>
 
-          <article class="category-card category-sopro">
+          <article class="category-card category-sopro" id="colecao-sopro">
             <div class="category-img">
-              <img src="assets/images/cat-sopro.jpg" alt="Flauta transversal">
+              <picture>
+                <source srcset="assets/images/categories/cat-sopro.webp" type="image/webp">
+                <img src="assets/images/categories/cat-sopro.jpg" alt="Flauta transversal" width="826" height="182" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="category-body">
               <span class="category-icon">🎷</span>
@@ -127,13 +181,16 @@
               <ul class="category-tags">
                 <li>Jazz</li><li>Clássico</li><li>Marching</li><li>Studio</li>
               </ul>
-              <a href="#categorias" class="category-link">Ver coleção →</a>
+              <a href="#colecao-sopro" class="category-link">Ver coleção →</a>
             </div>
           </article>
 
-          <article class="category-card category-percussao">
+          <article class="category-card category-percussao" id="colecao-percussao">
             <div class="category-img">
-              <img src="assets/images/cat-percussao.jpg" alt="Bateria completa">
+              <picture>
+                <source srcset="assets/images/categories/cat-percussao.webp" type="image/webp">
+                <img src="assets/images/categories/cat-percussao.jpg" alt="Bateria completa" width="800" height="533" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="category-body">
               <span class="category-icon">🥁</span>
@@ -142,13 +199,16 @@
               <ul class="category-tags">
                 <li>Rock</li><li>Latin</li><li>Eletrônica</li><li>Orquestral</li>
               </ul>
-              <a href="#categorias" class="category-link">Ver coleção →</a>
+              <a href="#colecao-percussao" class="category-link">Ver coleção →</a>
             </div>
           </article>
 
-          <article class="category-card category-teclados">
+          <article class="category-card category-teclados" id="colecao-teclados">
             <div class="category-img">
-              <img src="assets/images/cat-teclados.jpg" alt="Console de órgão com teclados manuais e registro de stops">
+              <picture>
+                <source srcset="assets/images/categories/cat-teclados.webp" type="image/webp">
+                <img src="assets/images/categories/cat-teclados.jpg" alt="Console de órgão com teclados manuais e registro de stops" width="1280" height="951" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="category-body">
               <span class="category-icon">🎹</span>
@@ -157,13 +217,16 @@
               <ul class="category-tags">
                 <li>Piano</li><li>Synth</li><li>MIDI</li><li>Stage</li>
               </ul>
-              <a href="#categorias" class="category-link">Ver coleção →</a>
+              <a href="#colecao-teclados" class="category-link">Ver coleção →</a>
             </div>
           </article>
 
-          <article class="category-card category-dj">
+          <article class="category-card category-dj" id="colecao-dj">
             <div class="category-img">
-              <img src="assets/images/hero-dj.jpg" alt="CDJs Pioneer">
+              <picture>
+                <source srcset="assets/images/hero/hero-dj.webp" type="image/webp">
+                <img src="assets/images/hero/hero-dj.jpg" alt="CDJs Pioneer" width="700" height="467" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="category-body">
               <span class="category-icon">🎧</span>
@@ -172,13 +235,16 @@
               <ul class="category-tags">
                 <li>CDJ</li><li>Mixer</li><li>Controller</li><li>Monitor</li>
               </ul>
-              <a href="#categorias" class="category-link">Ver coleção →</a>
+              <a href="#colecao-dj" class="category-link">Ver coleção →</a>
             </div>
           </article>
 
-          <article class="category-card category-audio">
+          <article class="category-card category-audio" id="colecao-audio">
             <div class="category-img">
-              <img src="assets/images/cat-audio.jpg" alt="Sala de controle de estúdio com mesa de mixagem e equipamentos profissionais">
+              <picture>
+                <source srcset="assets/images/categories/cat-audio.webp" type="image/webp">
+                <img src="assets/images/categories/cat-audio.jpg" alt="Sala de controle de estúdio com mesa de mixagem e equipamentos profissionais" width="1280" height="960" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="category-body">
               <span class="category-icon">🎙️</span>
@@ -187,7 +253,7 @@
               <ul class="category-tags">
                 <li>Condenser</li><li>Dynamic</li><li>Interface</li><li>Outboard</li>
               </ul>
-              <a href="#categorias" class="category-link">Ver coleção →</a>
+              <a href="#colecao-audio" class="category-link">Ver coleção →</a>
             </div>
           </article>
         </div>
@@ -209,7 +275,10 @@
               <h3>Anos 60 · Revolução</h3>
               <p>Rickenbacker, Hofner, Hammond B3. O som que mudou o mundo.</p>
               <div class="era-img">
-                <img src="assets/images/era-60.jpg" alt="Estética anos 60">
+                <picture>
+                  <source srcset="assets/images/eras/era-60.webp" type="image/webp">
+                  <img src="assets/images/eras/era-60.jpg" alt="Estética anos 60" width="500" height="333" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span class="era-genre">Rock · Psicodelia · Motown · Bossa Nova</span>
             </div>
@@ -221,7 +290,10 @@
               <h3>Anos 70 · Disco & Prog</h3>
               <p>Moog synthesizers, Rhodes, baterias Ludwig. Funk, disco e rock progressivo.</p>
               <div class="era-img">
-                <img src="assets/images/era-70.jpg" alt="Estética anos 70">
+                <picture>
+                  <source srcset="assets/images/eras/era-70.webp" type="image/webp">
+                  <img src="assets/images/eras/era-70.jpg" alt="Estética anos 70" width="500" height="375" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span class="era-genre">Disco · Prog Rock · Funk · MPB</span>
             </div>
@@ -233,7 +305,10 @@
               <h3>Anos 80 · Synthwave</h3>
               <p>Roland Juno, DX7, Simmons drums. New wave, pop e hair metal.</p>
               <div class="era-img">
-                <img src="assets/images/era-80.jpg" alt="Estética anos 80">
+                <picture>
+                  <source srcset="assets/images/eras/era-80.webp" type="image/webp">
+                  <img src="assets/images/eras/era-80.jpg" alt="Estética anos 80" width="500" height="333" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span class="era-genre">New Wave · Synth Pop · Hair Metal · Hip-Hop</span>
             </div>
@@ -245,7 +320,10 @@
               <h3>Anos 90 · Grunge & Rave</h3>
               <p>Fender Jazzmaster, Technics 1200, Akai MPC. Alternativo e eletrônico.</p>
               <div class="era-img">
-                <img src="assets/images/era-90.jpg" alt="Estética anos 90">
+                <picture>
+                  <source srcset="assets/images/eras/era-90.webp" type="image/webp">
+                  <img src="assets/images/eras/era-90.jpg" alt="Estética anos 90" width="500" height="357" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span class="era-genre">Grunge · Rave · Hip-Hop · Pop</span>
             </div>
@@ -257,7 +335,10 @@
               <h3>Anos 2000 · Digital Age</h3>
               <p>CDJs Pioneer, Ableton Push, Elektron. EDM, indie e produção digital.</p>
               <div class="era-img">
-                <img src="assets/images/era-2000.jpg" alt="Estética anos 2000">
+                <picture>
+                  <source srcset="assets/images/eras/era-2000.webp" type="image/webp">
+                  <img src="assets/images/eras/era-2000.jpg" alt="Estética anos 2000" width="500" height="334" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span class="era-genre">EDM · Indie · R&B · Trap</span>
             </div>
@@ -277,7 +358,10 @@
         <div class="ambassadors-grid">
           <article class="ambassador-card">
             <div class="ambassador-img">
-              <img src="assets/images/amb-1.jpg" alt="Músico jovem com guitarra">
+              <picture>
+                <source srcset="assets/images/ambassadors/amb-1.webp" type="image/webp">
+                <img src="assets/images/ambassadors/amb-1.jpg" alt="Músico jovem com guitarra" width="600" height="802" loading="lazy" decoding="async">
+              </picture>
               <div class="ambassador-overlay"></div>
             </div>
             <div class="ambassador-info">
@@ -290,7 +374,10 @@
 
           <article class="ambassador-card">
             <div class="ambassador-img">
-              <img src="assets/images/amb-2.jpg" alt="DJ em performance">
+              <picture>
+                <source srcset="assets/images/ambassadors/amb-2.webp" type="image/webp">
+                <img src="assets/images/ambassadors/amb-2.jpg" alt="DJ em performance" width="600" height="429" loading="lazy" decoding="async">
+              </picture>
               <div class="ambassador-overlay"></div>
             </div>
             <div class="ambassador-info">
@@ -303,7 +390,10 @@
 
           <article class="ambassador-card">
             <div class="ambassador-img">
-              <img src="assets/images/amb-3.jpg" alt="Saxofonista em palco">
+              <picture>
+                <source srcset="assets/images/ambassadors/amb-3.webp" type="image/webp">
+                <img src="assets/images/ambassadors/amb-3.jpg" alt="Saxofonista em palco" width="600" height="496" loading="lazy" decoding="async">
+              </picture>
               <div class="ambassador-overlay"></div>
             </div>
             <div class="ambassador-info">
@@ -316,7 +406,10 @@
 
           <article class="ambassador-card">
             <div class="ambassador-img">
-              <img src="assets/images/amb-4.jpg" alt="Produtora no estúdio">
+              <picture>
+                <source srcset="assets/images/ambassadors/amb-4.webp" type="image/webp">
+                <img src="assets/images/ambassadors/amb-4.jpg" alt="Produtora no estúdio" width="600" height="298" loading="lazy" decoding="async">
+              </picture>
               <div class="ambassador-overlay"></div>
             </div>
             <div class="ambassador-info">
@@ -329,7 +422,10 @@
 
           <article class="ambassador-card">
             <div class="ambassador-img">
-              <img src="assets/images/amb-5.jpg" alt="Baterista em ação">
+              <picture>
+                <source srcset="assets/images/ambassadors/amb-5.webp" type="image/webp">
+                <img src="assets/images/ambassadors/amb-5.jpg" alt="Baterista em ação" width="600" height="400" loading="lazy" decoding="async">
+              </picture>
               <div class="ambassador-overlay"></div>
             </div>
             <div class="ambassador-info">
@@ -342,7 +438,10 @@
 
           <article class="ambassador-card">
             <div class="ambassador-img">
-              <img src="assets/images/amb-6.jpg" alt="Cantora com violão">
+              <picture>
+                <source srcset="assets/images/ambassadors/amb-6.webp" type="image/webp">
+                <img src="assets/images/ambassadors/amb-6.jpg" alt="Cantora com violão" width="600" height="900" loading="lazy" decoding="async">
+              </picture>
               <div class="ambassador-overlay"></div>
             </div>
             <div class="ambassador-info">
@@ -378,7 +477,11 @@
             <strong>R$ 299<span>/mês</span></strong>
           </div>
         </div>
-        <form class="form surpresa-form" id="form-surpresa" novalidate>
+        <form class="form surpresa-form" id="form-surpresa" name="surpresa" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="surpresa">
+          <p class="visually-hidden">
+            <label>Não preencha: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
           <h3>Inscreva-se no clube</h3>
           <div class="form-group">
             <label for="surpresa-nome">Nome completo</label>
@@ -458,7 +561,11 @@
             </div>
           </div>
         </div>
-        <form class="form cadastro-form" id="form-cadastro" novalidate>
+        <form class="form cadastro-form" id="form-cadastro" name="cadastro" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="cadastro">
+          <p class="visually-hidden">
+            <label>Não preencha: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
           <h3>Criar conta</h3>
           <div class="form-row">
             <div class="form-group">
@@ -519,7 +626,7 @@
           </div>
           <div class="form-group form-check">
             <input type="checkbox" id="cad-termos" name="termos" required>
-            <label for="cad-termos">Li e aceito os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></label>
+            <label for="cad-termos">Li e aceito os <a href="pages/termos.html">Termos de Uso</a> e <a href="pages/privacidade.html">Política de Privacidade</a></label>
             <span class="form-error" aria-live="polite"></span>
           </div>
           <button type="submit" class="btn btn-primary btn-full">Criar minha conta</button>
@@ -537,37 +644,41 @@
           <span class="logo-text">Art<span>Music</span></span>
         </a>
         <p>A casa dos instrumentos musicais para todas as gerações. Qualidade, paixão e som desde 1960.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="YouTube">YT</a>
-          <a href="#" aria-label="TikTok">TK</a>
-          <a href="#" aria-label="Spotify">SP</a>
+        <!-- S2-05: redes ocultas até haver URLs reais
+        <div class="footer-social" aria-label="Redes sociais">
+          <a href="https://instagram.com/" aria-label="Instagram" rel="noopener noreferrer" target="_blank">IG</a>
+          <a href="https://youtube.com/" aria-label="YouTube" rel="noopener noreferrer" target="_blank">YT</a>
+          <a href="https://www.tiktok.com/" aria-label="TikTok" rel="noopener noreferrer" target="_blank">TK</a>
+          <a href="https://open.spotify.com/" aria-label="Spotify" rel="noopener noreferrer" target="_blank">SP</a>
         </div>
+        -->
       </div>
       <div class="footer-links">
         <h4>Loja</h4>
         <ul>
           <li><a href="#categorias">Categorias</a></li>
           <li><a href="#surpresa">Clube Surpresa</a></li>
-          <li><a href="#">Outlet</a></li>
+          <li><span class="footer-soon" title="Em breve">Outlet</span></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Institucional</h4>
         <ul>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Lojas físicas</a></li>
-          <li><a href="#">Trabalhe conosco</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><span class="footer-soon" title="Em breve">Sobre nós</span></li>
+          <li><span class="footer-soon" title="Em breve">Lojas físicas</span></li>
+          <li><span class="footer-soon" title="Em breve">Trabalhe conosco</span></li>
+          <li><span class="footer-soon" title="Em breve">Blog</span></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Atendimento</h4>
         <ul>
-          <li><a href="#">Central de ajuda</a></li>
-          <li><a href="#">Trocas e devoluções</a></li>
-          <li><a href="#">Garantia</a></li>
+          <li><span class="footer-soon" title="Em breve">Central de ajuda</span></li>
+          <li><span class="footer-soon" title="Em breve">Trocas e devoluções</span></li>
+          <li><span class="footer-soon" title="Em breve">Garantia</span></li>
           <li><a href="mailto:contato@artmusic.com.br">contato@artmusic.com.br</a></li>
+          <li><a href="pages/termos.html">Termos de Uso</a></li>
+          <li><a href="pages/privacidade.html">Privacidade</a></li>
         </ul>
       </div>
     </div>

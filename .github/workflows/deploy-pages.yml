@@ -1,0 +1,60 @@
+# Deploy ArtMusic → GitHub Pages
+# Após o primeiro push com este workflow, ative Pages:
+# Settings → Pages → Source: GitHub Actions
+# URL esperada: https://jorgeramalho.github.io/Artmusic/
+
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare publish folder
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='_site' \
+            --exclude='assets/images/_archive' \
+            --exclude='scripts' \
+            --exclude='docs' \
+            --exclude='.deployignore' \
+            --exclude='.gitignore' \
+            --exclude='netlify.toml' \
+            ./ _site/
+          # Mantém README na raiz do site para contexto do portfólio
+          cp README.md _site/README.md 2>/dev/null || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

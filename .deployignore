@@ -1,0 +1,6 @@
+# Publish ignores — hosts que lerem este arquivo / scripts de CI
+# Decisão Sprint 0 (S0-07-A): archive fica no Git, fora do pacote público.
+
+assets/images/_archive/**
+artmusic-*.png
+*.canvas.tsx
